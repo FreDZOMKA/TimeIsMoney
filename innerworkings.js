@@ -1,6 +1,8 @@
-const element = document.getElementById("myBtn");
-element.addEventListener("click", myFunction);
+window.addEventListener("load", loadHandler);
 
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
+function loadHandler() {
+  const buttonElement = document.getElementById("myBtn");
+  buttonElement.addEventListener("click", function () {
+    document.getElementById("demo").innerHTML = "Hello World";
+  });
 }
