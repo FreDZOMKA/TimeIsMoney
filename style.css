@@ -1,0 +1,14 @@
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+#stopwatch {
+  font-size: 2em;
+  color: #333;
+}
+
+#moneyClock {
+  margin: 1em;
+  font-size: 2em;
+}
