@@ -33,3 +33,5 @@ function resetStopwatch() {
 document.getElementById("startButton").addEventListener("click", startStopwatch);
 document.getElementById("stopButton").addEventListener("click", stopStopwatch);
 document.getElementById("resetButton").addEventListener("click", resetStopwatch);
+
+function moneyClock() {}
