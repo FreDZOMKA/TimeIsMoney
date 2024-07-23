@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time is money</title>
-    <script async src="app.js"></script>
+    <script async src="money.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="stopwatch">00:00:00</div>
+    <h1>Time is Money Clock</h1>
     <button id="startButton">Start</button>
     <button id="stopButton">Stop</button>
     <button id="resetButton">Reset</button>
-
-    <div id="moneyClock">0000</div>
+    <div id="numberBox"></div>
+    <div>
+      <h2>How it works</h2>
+      <p>You input your salary per hour, month or year. The money clock takes this numbers and divides it by the chosen option. This number is then converted into seconds. When you start the clock every seconds corresponds to the amount of money made per seconds of time. A month is 720 hours long. The clock takes every seconds of everyday into account, not just working hours. </p>
+    </div>
   </body>
 </html>
