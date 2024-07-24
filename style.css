@@ -1,14 +1,44 @@
+
+html * {
+  font-family:Georgia, 'Times New Roman', Times, serif !important;
+}
+
 body {
-  font-family: "Arial", sans-serif;
   text-align: center;
   margin-top: 50px;
 }
-#stopwatch {
-  font-size: 2em;
-  color: #333;
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 10px;
+  gap: 10px;
 }
 
-#moneyClock {
-  margin: 1em;
-  font-size: 2em;
+.textContainer >p, h2{
+  margin:0px;
+}
+
+.textBlock {
+  max-width:35%;
+  text-align: left;
+  font-size: 12pt;
+  line-height: 1.3em;
+}
+
+.textLeft {
+  text-align: left;
+
+}
+
+.horizontalList{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.redText {
+  color: red;
+  font-style: italic;
 }

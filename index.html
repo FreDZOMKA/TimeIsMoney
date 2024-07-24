@@ -8,23 +8,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Time is Money Clock</h1>
-    <button id="startButton">Start</button>
-    <button id="stopButton">Stop</button>
-    <button id="resetButton">Reset</button>
-    <div id="numberBox">
 
-    <select id="timeUnitSelect">
-      <option value="">Income Per Time Unit</option>
-      <option value="hour">hour</option>
-      <option value="day">day</option>
-      <option value="week">week</option>
-      <option value="year">year</option>
-    </select>
-    </div>
+    <h1>Time is Money Clock</h1>
     <div>
-      <h2>How it works</h2>
-      <p>You input your salary per hour, month or year. The money clock takes this numbers and divides it by the chosen option. This number is then converted into seconds. When you start the clock every seconds corresponds to the amount of money made per seconds of time. A month is 720 hours long. The clock takes every seconds of everyday into account, not just working hours. </p>
+      <button id="startButton">Start</button>
+      <button id="stopButton">Stop</button>
+      <button id="resetButton">Reset</button>
     </div>
+    
+
+    <div id="numberBox" class="horizontalList">
+
+    </div>
+    <div id="inputItems">
+      <label for='timeUnitSelect'>Income per</label>
+      <select id="timeUnitSelect">
+        <option value="hour">hour</option>
+        <option value="day">day</option>
+        <option value="week">week</option>
+        <option value="year">year</option>
+      </select>
+    </div>
+
+    <div class="textContainer">
+      <h2 class="textLeft">How it works</h2>
+      <p class="textBlock">Input your income per hour, day, week, month or year. The money clock takes this numbers and divides it by the chosen option. This number is then converted into seconds. When you start the clock every seconds corresponds to the amount of money made per seconds of time. For example, a month contains 720 hours or 2,592,000 seonds. The clock takes every seconds of everyday into account, not just working hours.</p>
+    </div>
+
   </body>
 </html>
