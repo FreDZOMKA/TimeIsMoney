@@ -36,6 +36,9 @@ setTime()
 timeDisplay.innerText = timePlaceHolder
 moneyDisplay.innerText = salary + " kr"
 
+timeDisplay.classList.add('timerNumber')
+moneyDisplay.classList.add('timerNumber')
+
 salaryInputEl.placeholder = "Input your Salary"
 salaryInputEl.setAttribute("id", "userSalary")
 salaryInputEl.setAttribute("type", "number")
@@ -65,17 +68,17 @@ timeUnitSelect.addEventListener("change", function (){
         console.log("Day was selected.")
     }
     else if (timeUnit == 'week'){
-        amountOfSeconds = 604800
+        amountOfSeconds = 657000
 
         console.log("Month was selected.")
     }
     else if (timeUnit == 'month'){
-        amountOfSeconds = 2419200
+        amountOfSeconds = 2628000
 
         console.log("Month was selected.")
     }
     else if (timeUnit == 'year'){
-        amountOfSeconds = 125798400
+        amountOfSeconds = 31536000
 
         console.log("Year was selected.")
 
