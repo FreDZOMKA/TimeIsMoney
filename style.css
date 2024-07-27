@@ -25,7 +25,7 @@ body {
 }
 
 .textBlock {
-  max-width:25%;
+  max-width:30%;
   text-align: left;
   font-size: 12pt;
   line-height: 1.3em;
@@ -45,4 +45,17 @@ body {
 .redText {
   color: red;
   font-style: italic;
+}
+
+@media screen and (max-width: 1000px) {
+  .textBlock {
+    max-width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .textBlock {
+    max-width: 70%;
+    font-size: 11pt;
+  }
 }

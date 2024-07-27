@@ -12,16 +12,20 @@ const startButton = document.querySelector("#startButton")
 const stopButton = document.querySelector("#stopButton")
 const resetButton = document.querySelector('#resetButton')
 const salaryInputEl = document.createElement('input')
-const timeUnitOptionEl = document.querySelector('#timeUnitSelect')
+const timeUnitSelect = document.querySelector('#timeUnitSelect')
+
 
 //Create Variables
+let timeUnit = 'hour'
+let amountOfSeconds = 3600
 let timePlaceHolder = 0 + "s"
 let timerIsOn = false
 let timeIn10th
 let salary = 0
 const inputEmptyErEl = document.createElement("p")
 let errorIsDisplayed = false
-let timerInterval
+let timerInterval //to prevent reset error
+let timeUnits = ["hour", "day", "week", "month", "year"]
 
 function setTime(){
     timeIn10th = 0
@@ -46,20 +50,56 @@ inputEmptyErEl.setAttribute('class', 'redText')
 
 
 //Functions for elements
+timeUnitSelect.addEventListener("change", function (){
+    console.log(this.value)
+
+    timeUnit = this.value
+    if (timeUnit == 'hour'){
+        amountOfSeconds = 3600
+        
+        console.log("Hour was selected.")
+    }
+    else if (timeUnit == 'day'){
+        amountOfSeconds = 86400
+
+        console.log("Day was selected.")
+    }
+    else if (timeUnit == 'week'){
+        amountOfSeconds = 604800
+
+        console.log("Month was selected.")
+    }
+    else if (timeUnit == 'month'){
+        amountOfSeconds = 2419200
+
+        console.log("Month was selected.")
+    }
+    else if (timeUnit == 'year'){
+        amountOfSeconds = 125798400
+
+        console.log("Year was selected.")
+
+    }
+    
+    console.log(amountOfSeconds)
+})
+
+var a = document.getElementById('country');
+
+//Used to create the options for what time unit salary is in.
+timeUnits.forEach(unit => {
+    unitEl = document.createElement("option")
+    unitEl.innerText = unit
+    unitEl.value = unit
+    
+    timeUnitSelect.appendChild(unitEl)
+});
 
 //For every keypress check the salary value
 document.body.addEventListener("keyup", ()=>{
     if (timerIsOn == false)
     salary = salaryInputEl.value
-    console.log(salary)
 })
-//Check Time Unit Option
-timeUnitOptionEl.addEventListener('click', ()=>{
-    console.log('Time Unit Option Clicked')
-})
-
-
-
 //Start that uses interval for timer, formats seconds to also shows deciseconds and updates element
 startButton.addEventListener("click", ()=> { 
     if (timerIsOn == false && salary != 0){
@@ -70,7 +110,7 @@ startButton.addEventListener("click", ()=> {
                 timeIn10th = timeIn10th + 0.1
                 timeInSeconds = timeIn10th
                 timeDisplay.innerText = timeInSeconds.toFixed(1) + "s"
-                moneyDisplay.innerText = (salary / (86400) * timeInSeconds).toFixed(3) + " kr"
+                moneyDisplay.innerText = (salary / (amountOfSeconds) * timeInSeconds).toFixed(3) + " kr"
             },100)
         }
     }
