@@ -8,7 +8,7 @@ html * {
 body {
   text-align: center;
   min-height: 100vh;
-  background-image: linear-gradient(0deg,#bed4f0,#e8ebf0);
+  background-image: linear-gradient(0deg,#b1f17c,#cef3c2);
 }
 
 .textContainer {
@@ -21,6 +21,11 @@ body {
 
 .textContainer >p, h2{
   margin:0px;
+}
+
+.buttonHub{
+  margin: 0px 0px 20px;
+
 }
 
 .textBlock {
@@ -37,12 +42,14 @@ body {
 
 .timerNumber {
   font-size: 32pt;
+  margin: 40px 0px
 }
 
 .heroHeader {
-  font-size: 38pt;
+  font-size: 32pt;
   font-family: "Barlow", sans-serif;
   font-weight: bold;
+  margin: 40px 0px 10px;
 }
 
 .horizontalList{
@@ -54,6 +61,27 @@ body {
 .redText {
   color: red;
   font-style: italic;
+}
+.buttonStyle {
+  font-size: 16pt;
+  padding: 12px;
+  margin: 4px;
+  border-radius:5px;
+  border: none;
+  background-color: #8f8f8f;
+  color: rgb(255, 255, 255);
+}
+
+.buttonStyle:hover{
+  cursor: pointer;
+  color:#485a51;;
+}
+#startButton{
+ 
+  background-color: #6a9c6a;
+}
+#stopButton{
+  background-color: #6d836a;
 }
 
 @media screen and (max-width: 1000px) {

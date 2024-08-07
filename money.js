@@ -33,6 +33,10 @@ function setTime(){
 setTime()
 
 //Assign attributes to elements
+startButton.classList.add('buttonStyle')
+stopButton.classList.add('buttonStyle')
+resetButton.classList.add('buttonStyle')
+
 timeDisplay.innerText = timePlaceHolder
 moneyDisplay.innerText = salary + " kr"
 
@@ -113,7 +117,7 @@ startButton.addEventListener("click", ()=> {
                 timeIn10th = timeIn10th + 0.1
                 timeInSeconds = timeIn10th
                 timeDisplay.innerText = timeInSeconds.toFixed(1) + "s"
-                moneyDisplay.innerText = (salary / (amountOfSeconds) * timeInSeconds).toFixed(3) + " kr"
+                moneyDisplay.innerText = (salary / (amountOfSeconds) * timeInSeconds).toFixed(2) + " kr"
             },100)
         }
     }
