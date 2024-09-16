@@ -13,8 +13,11 @@ const stopButton = document.querySelector("#stopButton");
 const resetButton = document.querySelector("#resetButton");
 const salaryInputEl = document.createElement("input");
 const timeUnitSelect = document.querySelector("#timeUnitSelect");
+//Display Income Per Second
+const icpsElement = document.querySelector("#icps");
 
 //Create Variables
+let icpsInt = 0;
 let timeUnit = "hour";
 let amountOfSeconds = 3600;
 let timeInSeconds;
@@ -56,6 +59,8 @@ inputContainerDiv.appendChild(salaryInputEl);
 inputEmptyErEl.textContent = "Input income to start timer.";
 inputEmptyErEl.setAttribute("class", "redText");
 
+icpsElement.innerText = "That's " + icpsInt + " kr per second";
+
 //Functions for elements
 timeUnitSelect.addEventListener("change", function () {
   console.log(this.value);
@@ -84,9 +89,13 @@ timeUnitSelect.addEventListener("change", function () {
   }
 
   console.log(amountOfSeconds);
+  updateICPS();
 });
 
-var a = document.getElementById("country");
+function updateICPS() {
+  icpsInt = (salary / amountOfSeconds).toFixed(2);
+  icpsElement.innerText = "That's " + icpsInt + " kr per second";
+}
 
 //Used to create the options for what time unit salary is in.
 timeUnits.forEach((unit) => {
@@ -101,9 +110,11 @@ timeUnits.forEach((unit) => {
 document.body.addEventListener("keyup", () => {
   if (timerIsOn == false) {
     salary = Number(salaryInputEl.value);
+    updateICPS();
     console.log(salary, activeSalary);
   }
 });
+
 //Start that uses interval for timer, formats seconds to also shows deciseconds and updates element
 startButton.addEventListener("click", () => {
   if (activeSalary == salary || activeSalary == undefined) {

@@ -17,6 +17,9 @@ body {
   margin: 25px 10px;
   gap: 10px;
 }
+h2 {
+  font-weight: bold;
+}
 
 .textContainer > p,
 h2 {
@@ -79,6 +82,19 @@ h2 {
 }
 #stopButton {
   background-color: #6d836a;
+}
+
+#inputItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#inputItems,
+input,
+select {
+  font-size: 13pt;
 }
 
 @media screen and (max-width: 1000px) {
