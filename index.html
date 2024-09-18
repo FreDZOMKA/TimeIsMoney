@@ -6,23 +6,25 @@
     <title>Time is money</title>
     <script async src="money.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="grid.css" />
     <!--Link to Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-
     <h1 class="heroHeader">Time is Money Clock</h1>
-    
+
     <div id="inputItems">
-      <label for='timeUnitSelect'>Income per</label>
-      <select id="timeUnitSelect">
-      </select>
+      <label for="timeUnitSelect">Income per</label>
+      <select id="timeUnitSelect"></select>
     </div>
 
-    <div id="numberBox" class="horizontalList">
-    </div>
+    <div id="numberBox" class="horizontalList"></div>
+    <p id="icps"></p>
 
     <div class="buttonHub">
       <button id="startButton">Start</button>
@@ -32,8 +34,23 @@
 
     <div class="textContainer">
       <h2 class="textLeft">How it works</h2>
-      <p class="textBlock">Input your income per hour, day, week, month or year. The money clock takes this numbers and divides it by the chosen option. This number is then converted into seconds. When you start the clock every seconds corresponds to the amount of money made per seconds of time. For example, a month contains 720 hours or 2,592,000 seonds. The clock takes every seconds of everyday into account, not just working hours.</p>
+      <p class="textBlock">
+        Input your income per hour, day, week, month or year. The money clock takes this number and divides it by the
+        chosen option. This number is then converted into seconds. When you start the clock every seconds corresponds to
+        the amount of money made per seconds of time. For example, a month contains 720 hours or 2,592,000 seonds. The
+        clock takes every seconds of everyday into account, not just working hours.
+      </p>
     </div>
-
+    <div class="grid">
+      <div class="xCalculator">
+        <h2>How much made in X calculator</h2>
+        <p>
+          In <input type="number" style="width: 50px" /><select>
+            <option>Hours</option></select
+          >you make <span id="moneyMadeInXText"></span>
+        </p>
+      </div>
+      <div class="xCounter"><h2>How long does it takes to make X countdown.</h2></div>
+    </div>
   </body>
 </html>
