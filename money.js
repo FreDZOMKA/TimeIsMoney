@@ -3,16 +3,23 @@ console.log("money.js script loaded");
 
 // I can't write | for some reason. Keyboard inputs are of.
 
-//Get or create elements
+
+//Div for numbers
 const numberItemsDiv = document.querySelector("#numberBox");
-const inputContainerDiv = document.querySelector("#inputItems");
+//i.e 0s 0kr
 const timeDisplay = document.createElement("p");
 const moneyDisplay = document.createElement("p");
+
+//Buttons
 const startButton = document.querySelector("#startButton");
 const stopButton = document.querySelector("#stopButton");
 const resetButton = document.querySelector("#resetButton");
+
+//Input Items i.e 1000 kr per DAY
+const inputContainerDiv = document.querySelector("#inputItems");
 const salaryInputEl = document.createElement("input");
 const timeUnitSelect = document.querySelector("#timeUnitSelect");
+
 //Display Income Per Second
 const icpsElement = document.querySelector("#icps");
 
@@ -20,21 +27,28 @@ const icpsElement = document.querySelector("#icps");
 let icpsInt = 0;
 let timeUnit = "hour";
 let amountOfSeconds = 3600;
-let timeInSeconds;
+
 let timePlaceHolder = 0 + "s";
+
 let timerIsOn = false;
+
+//Converting Time
+let timeInSeconds;
 let timeIn10th;
+
+//Catching Written salary and salary in started timer.
 let activeSalary;
 let salary = 0;
+
+//Generate Error P and Switch
 const inputEmptyErEl = document.createElement("p");
 let errorIsDisplayed = false;
+
+
 let timerInterval; //to prevent reset error
 let timeUnits = ["hour", "day", "week", "month", "year"];
 
-function setTime() {
-  timeIn10th = 0;
-}
-setTime();
+
 
 //Assign attributes to elements
 startButton.classList.add("buttonStyle");
@@ -60,6 +74,12 @@ inputEmptyErEl.textContent = "Input income to start timer.";
 inputEmptyErEl.setAttribute("class", "redText");
 
 icpsElement.innerText = "That's " + icpsInt + " kr per second";
+
+//Init Time on load for timer
+function setTime() {
+  timeIn10th = 0;
+}
+setTime();
 
 //Functions for elements
 timeUnitSelect.addEventListener("change", function () {
@@ -161,9 +181,9 @@ stopButton.addEventListener("click", function stopTimer() {
     console.log("Timer is not on and therefore can't be stopped");
   }
 });
+
 //Reset Timer
 resetButton.addEventListener("click", resetTimer);
-
 function resetTimer() {
   try {
     if (timerIsOn == true || timerIsOn == false) clearInterval(timerInterval);
