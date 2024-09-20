@@ -119,7 +119,7 @@ function updateICPS() {
 
 //Used to create the options for what time unit salary is in.
 timeUnits.forEach((unit) => {
-  unitEl = document.createElement("option");
+  let unitEl = document.createElement("option");
   unitEl.innerText = unit;
   unitEl.value = unit;
 
@@ -197,3 +197,4 @@ function resetTimer() {
     console.error("An error occured when resetting timer", error.message);
   }
 }
+export {icpsInt,salary}

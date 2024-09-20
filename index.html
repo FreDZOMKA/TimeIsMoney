@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Time is money</title>
-    <script async src="money.js"></script>
-    <script async src="salaryTimesTime.js"></script>
+    <script async type="module" src="money.js"></script>
+    <script async type="module" src="salaryTimesTime.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="grid.css" />
     <!--Link to Font-->
@@ -46,7 +46,7 @@
       <div class="xCalculator">
         <h2>How much made in X calculator</h2>
         <p>
-          In <input type="number" style="width: 50px" /><select>
+          In <input id="timeAmountInput" type="number" style="width: 50px" /><select>
             <option>Hours</option></select
           >you make <span id="moneyMadeInXText"></span>
         </p>
