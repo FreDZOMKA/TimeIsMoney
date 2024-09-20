@@ -113,8 +113,8 @@ timeUnitSelect.addEventListener("change", function () {
 });
 
 function updateICPS() {
-  icpsInt = (salary / amountOfSeconds).toFixed(2);
-  icpsElement.innerText = "That's " + icpsInt + " kr per second";
+  icpsInt = (salary / amountOfSeconds);
+  icpsElement.innerText = "That's " + icpsInt.toFixed(3) + " kr per second";
 }
 
 //Used to create the options for what time unit salary is in.
@@ -127,7 +127,7 @@ timeUnits.forEach((unit) => {
 });
 
 //For every keypress check the salary value
-document.body.addEventListener("keyup", () => {
+document.body.addEventListener("input", () => {
   if (timerIsOn == false) {
     salary = Number(salaryInputEl.value);
     updateICPS();
@@ -197,4 +197,4 @@ function resetTimer() {
     console.error("An error occured when resetting timer", error.message);
   }
 }
-export {icpsInt,salary}
+export {icpsInt, salaryInputEl}

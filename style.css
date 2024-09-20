@@ -50,7 +50,7 @@ h2 {
   font-size: 54pt;
   font-family: "Barlow", sans-serif;
   font-weight: bold;
-  margin: 1em;
+  margin: 2rem 0em;
 }
 
 .horizontalList {
@@ -101,6 +101,7 @@ select {
   .textBlock {
     max-width: 40%;
   }
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -108,4 +109,5 @@ select {
     max-width: 70%;
     font-size: 11pt;
   }
+  .heroHeader {font-size: 32pt;}
 }

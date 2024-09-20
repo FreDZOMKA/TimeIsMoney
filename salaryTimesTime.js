@@ -1,16 +1,16 @@
-import {icpsInt,salary} from "./money.js"
+import {icpsInt,salaryInputEl} from "./money.js"
 
 
 const moneyMadeInXElement = document.querySelector("#moneyMadeInXText")
 
 let timeAmountElement = document.querySelector("#timeAmountInput")
 
+salaryInputEl.addEventListener("input", UpdateIncomePerSecond2)
 timeAmountElement.addEventListener("input", UpdateIncomePerSecond2)
 
 function UpdateIncomePerSecond2(){
     let amountOfTime = timeAmountElement.value;
     //User inputs time in number
-    console.log(amountOfTime)
     let option = "hour"
 
     if (option == "hour"){
@@ -18,6 +18,8 @@ function UpdateIncomePerSecond2(){
         let moneyMadeInX = (amountOfTime * icpsInt).toFixed(0)
         moneyMadeInXElement.innerText = moneyMadeInX + (" kr")
     }
+    console.log(amountOfTime + "seconds",moneyMadeInXElement)
+
 }
 
 
