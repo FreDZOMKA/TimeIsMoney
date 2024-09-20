@@ -18,7 +18,22 @@ function UpdateIncomePerSecond2(){
         let moneyMadeInX = (amountOfTime * icpsInt).toFixed(0)
         moneyMadeInXElement.innerText = moneyMadeInX + (" kr")
     }
-    console.log(amountOfTime + "seconds",moneyMadeInXElement)
+    //console.log(amountOfTime + "seconds",moneyMadeInXElement)
+
+}
+
+const desiredMoneyInput = document.querySelector("#amountOfMoneyDisplayEl")
+desiredMoneyInput.addEventListener("input",calculateTimeUntilX)
+
+const timeUntilXDisplay = document.querySelector("#displayTimeUntilXP")
+
+function calculateTimeUntilX (){
+    let desiredMoneyValue = Number(desiredMoneyInput.value)
+
+    let timeUntilX = desiredMoneyInput.value / (icpsInt * 3600)
+    timeUntilXDisplay.innerText = timeUntilX.toFixed(2) + "hours"
+    console.log(timeUntilX, desiredMoneyInput.value, icpsInt)
+    
 
 }
 
